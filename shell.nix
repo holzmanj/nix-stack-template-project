@@ -4,9 +4,8 @@
 }:
   with pkgs;
   haskell.lib.buildStackProject {
-    inherit ghc;
     name = "haskell-template";
-    buildInputs = [ ];
+    buildInputs = [ pkgs.cabal-install ];
     shellHook = ''
       echo 'Entering Environment'
       alias stack='\stack --nix'
